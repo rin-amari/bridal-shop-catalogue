@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogue | Élégance Bridal</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <!-- PWA Setup -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Élégance Bridal">
+</head>
+
+<body>
+  <header>
+    <div class="logo"><a href="index.html">Élégance Bridal</a></div>
+    <nav>
+      <ul>
+        <li><a href="catalogue.html">All</a></li>
+        <li><a href="catalogue.html?category=dresses">Dresses</a></li>
+        <li><a href="catalogue.html?category=accessories">Accessories</a></li>
+        <li><a href="catalogue.html?category=suitcases">Suitcases</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="catalogue-hero">
+    <h1>Our Collection</h1>
+    <p>Explore refined craftsmanship and timeless elegance</p>
+  </section>
+
+  <main class="catalogue-modern">
+    <div class="catalogue-controls">
+      <button id="filter-toggle">☰ Filters</button>
+      <div class="sort-and-view">
+        <select id="sort">
+          <option value="name-asc">Name A–Z</option>
+          <option value="name-desc">Name Z–A</option>
+          <option value="price-asc">Price Low–High</option>
+          <option value="price-desc">Price High–Low</option>
+        </select>
+        <div class="grid-controls">
+          <button class="grid-btn" data-columns="1">▣</button>
+          <button class="grid-btn" data-columns="2">▣▣</button>
+          <button class="grid-btn" data-columns="3">▣▣▣</button>
+          <button class="grid-btn" data-columns="4">▣▣▣▣</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="filters hidden" id="filters">
+      <div class="filter-header">
+        <h3>Filter By</h3>
+        <button id="filter-close">✕</button>
+      </div>
+      <label>Style:
+        <select id="filter-style">
+          <option value="">All</option>
+          <option value="ball-gown">Ball Gown</option>
+          <option value="mermaid">Mermaid</option>
+          <option value="a-line">A-Line</option>
+        </select>
+      </label>
+      <label>Color:
+        <select id="filter-color">
+          <option value="">All</option>
+          <option value="white">White</option>
+          <option value="ivory">Ivory</option>
+          <option value="blush">Blush</option>
+          <option value="champagne">Champagne</option>
+        </select>
+      </label>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section id="product-list" class="product-grid refined-grid columns-3">
+      <!-- DRESSES -->
+      <div class="product-card" data-category="dresses" data-style="ball-gown" data-color="ivory" data-price="2400"
+        data-name="Ivory Ball Gown">
+        <a href="product.html">
+          <img src="images/dresses/dress1.jpg" alt="Ivory Ball Gown" />
+          <div class="info">
+            <h3>Ivory Ball Gown</h3>
+            <p>$2,400</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="product-card" data-category="dresses" data-style="mermaid" data-color="blush" data-price="2100"
+        data-name="Blush Mermaid">
+        <a href="product.html">
+          <img src="images/dresses/dress2.jpg" alt="Blush Mermaid" />
+          <div class="info">
+            <h3>Blush Mermaid</h3>
+            <p>$2,100</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="product-card" data-category="dresses" data-style="a-line" data-color="champagne" data-price="2300"
+        data-name="Champagne A-Line">
+        <a href="product.html">
+          <img src="images/dresses/dress3.jpg" alt="Champagne A-Line" />
+          <div class="info">
+            <h3>Champagne A-Line</h3>
+            <p>$2,300</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- ACCESSORIES -->
+      <div class="product-card" data-category="accessories" data-style="elegant" data-color="gold" data-price="300"
+        data-name="Gold Necklace">
+        <a href="product.html">
+          <img src="images/accessories/accessory1.jpg" alt="Gold Necklace" />
+          <div class="info">
+            <h3>Gold Necklace</h3>
+            <p>$300</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="product-card" data-category="accessories" data-style="classic" data-color="silver" data-price="150"
+        data-name="Silver Bracelet">
+        <a href="product.html">
+          <img src="images/accessories/accessory2.jpg" alt="Silver Bracelet" />
+          <div class="info">
+            <h3>Silver Bracelet</h3>
+            <p>$150</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- SUITCASES -->
+      <div class="product-card" data-category="suitcases" data-style="modern" data-color="black" data-price="350"
+        data-name="Travel Suitcase">
+        <a href="product.html">
+          <img src="images/suitcases/suitcase1.jpg" alt="Travel Suitcase" />
+          <div class="info">
+            <h3>Travel Suitcase</h3>
+            <p>$350</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="product-card" data-category="suitcases" data-style="classic" data-color="gray" data-price="400"
+        data-name="Large Suitcase">
+        <a href="product.html">
+          <img src="images/suitcases/suitcase2.jpg" alt="Large Suitcase" />
+          <div class="info">
+            <h3>Large Suitcase</h3>
+            <p>$400</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
