@@ -1,5 +1,4 @@
 # Bridal shop catalogue
----
 
 ## How to Use
 
@@ -16,15 +15,11 @@
    - Tap **Share → Add to Home Screen** to install the PWA.  
    - Enjoy offline access and app-like experience.  
 
----
-
 ## PWA Features
 
 - Full-screen mode with **custom icon and theme color**  
 - Offline caching of all core pages and assets  
 - Works on **Android** (Chrome, Edge, etc.) and **iOS** (Safari, iPadOS)  
-
----
 
 ## Feedback
 
