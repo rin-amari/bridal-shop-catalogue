@@ -3,7 +3,7 @@
 ## How to Use
 
 1. Open the site in your browser:  
-   `https://rin-amari.github.io/elegance-catalogue/`  
+   `https://rin-amari.github.io/bridal-shop-catalogue/`  
 
 2. Navigate through **Dresses, Accessories, and Suitcases**.  
 
