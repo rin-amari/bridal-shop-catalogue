@@ -11,14 +11,15 @@
         ],
         "images": [
             "../images/dresses/dress1.png",
-            "../images/dresses/dress1_back.png"
+            "../images/dresses/dress1_back.png",
+            "../images/dresses/dress1_detail.png"
         ]
     },
     {
         "id": "dress2",
         "name": "Blush Mermaid Dress",
         "price": 2100,
-        "desc": "A stunning blush mermaid dress with elegant lace accents and a figure-flattering                silhouette, perfect for a romantic bridal look.",
+        "desc": "A stunning blush mermaid dress with elegant lace accents and a figure-flattering silhouette, perfect for a romantic bridal look.",
         "category": "dresses",
         "colors": [
             "Blush",
@@ -26,7 +27,25 @@
         ],
         "images": [
             "../images/dresses/dress2.png",
-            "../images/dresses/dress2_back.png"
+            "../images/dresses/dress2_back.png",
+            "../images/dresses/dress2_detail.png",
+            "../images/dresses/dress2_detail2.png"
+        ]
+    },
+    {
+        "id": "dress3",
+        "name": "Champagne A-Line Dress",
+        "price": 2300,
+        "desc": "A graceful champagne A-line dress featuring delicate lace and a flowing skirt, perfect for an elegant and timeless bridal look.",
+        "category": "dresses",
+        "colors": [
+            "Blush",
+            "Champagne"
+        ],
+        "images": [
+            "../images/dresses/dress3.png",
+            "../images/dresses/dress3_back.png",
+            "../images/dresses/dress3_detail.png"
         ]
     },
     {
