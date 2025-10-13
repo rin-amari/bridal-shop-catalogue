@@ -1,8 +1,3 @@
-console.log("Loading JSON...");
-const res = await fetch("products.json");
-const data = await res.json();
-console.log(data);
-
 document.addEventListener("DOMContentLoaded", () => {
   const filterToggle = document.getElementById("filter-toggle");
   const filterClose = document.getElementById("filter-close");
