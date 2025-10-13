@@ -8,28 +8,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="product-page immersive">
+
     <header>
-        <a href="index.html" class="logo">Élégance Bridal</a>
+        <a href="../../index.html" class="logo">Élégance Bridal</a>
     </header>
 
     <section class="immersive-hero">
-        <img id="mainPhoto" src="" alt="Main Product">
+        <img id="mainPhoto" src="" alt="Main Dress">
     </section>
 
-    <div class="thumbs-belt" id="thumbsBelt">
-        <!-- Thumbnails injected dynamically -->
-    </div>
+    <div class="thumbs-belt" id="thumbs"></div>
 
     <section class="product-info">
         <h1 id="productName"></h1>
         <p class="price" id="productPrice"></p>
         <p class="desc" id="productDesc"></p>
+        <div class="details" id="productColors"></div>
         <button class="fav-btn">♡ Add to favourites</button>
     </section>
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox hidden">
+        <div class="lb-overlay"></div>
         <span class="close">×</span>
         <img class="lightbox-image" src="">
         <div class="nav left">‹</div>
@@ -37,7 +38,7 @@
         <div class="counter"></div>
     </div>
 
-    <script src="product.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

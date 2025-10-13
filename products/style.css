@@ -6,49 +6,35 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 1rem 2rem;
     background: #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 .logo {
     font-size: 1.5rem;
-    font-family: 'Didot', serif;
     color: #b38b6d;
+    text-decoration: none;
 }
 
-/* Hero section */
 .immersive-hero {
     position: relative;
     text-align: center;
-    background: #faf7f5;
     overflow: hidden;
-    padding: 2rem 0;
 }
 
 .immersive-hero img {
-    width: auto;
+    width: 100%;
     height: 80vh;
-    max-width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     cursor: pointer;
 }
 
-/* Thumbnails belt */
 .thumbs-belt {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     margin-top: -4rem;
-    position: relative;
     z-index: 2;
 }
 
@@ -56,25 +42,23 @@ a {
     width: 100px;
     height: 130px;
     object-fit: cover;
-    cursor: pointer;
     border-radius: 8px;
+    cursor: pointer;
     transition: transform 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.thumbs-belt img.active {
-    border-color: #b38b6d;
 }
 
 .thumbs-belt img:hover {
     transform: scale(1.05);
 }
 
-/* Product info */
+.thumbs-belt img.active {
+    border: 2px solid #b38b6d;
+}
+
 .product-info {
     text-align: center;
     max-width: 600px;
-    margin: 3rem auto;
+    margin: 5rem auto 2rem;
     padding: 0 1rem;
 }
 
@@ -89,13 +73,9 @@ a {
     margin-bottom: 1rem;
 }
 
-.desc {
-    margin-bottom: 1rem;
+.details {
+    margin-top: 2rem;
     color: #444;
-}
-
-.product-info p {
-    margin: 0.5rem 0;
 }
 
 .fav-btn {
@@ -104,7 +84,6 @@ a {
     color: #b38b6d;
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
-    margin-top: 2rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -112,4 +91,71 @@ a {
 .fav-btn:hover {
     background: #b38b6d;
     color: #fff;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.lightbox.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 2;
+    border-radius: 8px;
+}
+
+.close,
+.nav {
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 3;
+    user-select: none;
+}
+
+.close {
+    top: 20px;
+    right: 30px;
+}
+
+.nav.left {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav.right {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.counter {
+    position: absolute;
+    bottom: 20px;
+    color: #fff;
+    font-size: 1.2rem;
+    z-index: 3;
 }

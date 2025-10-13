@@ -1,78 +1,81 @@
-document.addEventListener("DOMContentLoaded", async () => {
+// Load JSON dynamically
+let current = 0;
+let images = [];
+
+async function loadProduct() {
+    const res = await fetch("products.json");
+    const data = await res.json();
+
+    // Get product from URL ?id=dress1
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get("id"); // e.g., ?id=dress1
+    const id = params.get("id") || "dress1";
+    const product = data.find(p => p.id === id);
+
+    if (!product) return;
+
+    images = product.images;
 
     const mainPhoto = document.getElementById("mainPhoto");
-    const productName = document.getElementById("productName");
-    const productPrice = document.getElementById("productPrice");
-    const productDesc = document.getElementById("productDesc");
-    const thumbsBelt = document.getElementById("thumbsBelt");
+    const thumbs = document.getElementById("thumbs");
 
-    const lightbox = document.getElementById("lightbox");
-    const lbImg = document.querySelector(".lightbox-image");
-    const lbClose = document.querySelector(".close");
-    const lbLeft = document.querySelector(".nav.left");
-    const lbRight = document.querySelector(".nav.right");
-    const lbCounter = document.querySelector(".counter");
+    mainPhoto.src = images[0];
 
-    let current = 0;
-    let images = [];
-
-    fetch('products.json')
-        .then(res => res.json())
-        .then(data => {
-            const product = data.find(p => p.id === productId);
-            if (!product) return;
-
-            productName.textContent = product.name;
-            productPrice.textContent = `$${product.price.toLocaleString()}`;
-            productDesc.textContent = product.desc;
-            images = product.images;
-            mainPhoto.src = images[0];
-
-            // Thumbnails
-            images.forEach((src, i) => {
-                const thumb = document.createElement('img');
-                thumb.src = src;
-                thumb.classList.add('thumb');
-                if (i === 0) thumb.classList.add('active');
-                thumb.addEventListener('click', () => {
-                    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-                    thumb.classList.add('active');
-                    mainPhoto.src = src;
-                    current = i;
-                });
-                thumbsBelt.appendChild(thumb);
-            });
+    // Thumbnails
+    images.forEach((img, i) => {
+        const thumb = document.createElement("img");
+        thumb.src = img;
+        if (i === 0) thumb.classList.add("active");
+        thumb.addEventListener("click", () => {
+            mainPhoto.src = img;
+            document.querySelectorAll(".thumbs-belt img").forEach(t => t.classList.remove("active"));
+            thumb.classList.add("active");
+            current = i;
         });
+        thumbs.appendChild(thumb);
+    });
 
-    // Lightbox
-    mainPhoto.addEventListener('click', () => openLightbox(current));
+    // Product info
+    document.getElementById("productName").textContent = product.name;
+    document.getElementById("productPrice").textContent = `$${product.price}`;
+    document.getElementById("productDesc").textContent = product.desc;
+    document.getElementById("productColors").innerHTML = `<strong>Colors:</strong> ${product.colors.join(", ")}`;
+}
 
-    function openLightbox(index) {
-        lightbox.classList.remove('hidden');
-        updateLightbox(index);
-    }
+loadProduct();
 
-    function updateLightbox(i) {
-        lbImg.src = images[i];
-        lbCounter.textContent = `${i + 1} / ${images.length}`;
-    }
+// Lightbox
+const mainPhoto = document.getElementById("mainPhoto");
+const lightbox = document.getElementById("lightbox");
+const lbImg = document.querySelector(".lightbox-image");
+const lbClose = document.querySelector(".close");
+const lbLeft = document.querySelector(".nav.left");
+const lbRight = document.querySelector(".nav.right");
+const lbCounter = document.querySelector(".counter");
 
-    function closeLightbox() {
-        lightbox.classList.add('hidden');
-    }
+mainPhoto.addEventListener("click", () => openLightbox(current));
 
-    lbLeft.onclick = () => {
-        current = (current - 1 + images.length) % images.length;
-        updateLightbox(current);
-    };
+function openLightbox(i) {
+    lightbox.classList.add("visible");
+    updateLightbox(i);
+}
 
-    lbRight.onclick = () => {
-        current = (current + 1) % images.length;
-        updateLightbox(current);
-    };
+function updateLightbox(i) {
+    lbImg.src = images[i];
+    lbCounter.textContent = `${i + 1} / ${images.length}`;
+}
 
-    lbClose.onclick = closeLightbox;
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+function closeLightbox() { lightbox.classList.remove("visible"); }
+
+lbClose.onclick = closeLightbox;
+lbLeft.onclick = () => { current = (current - 1 + images.length) % images.length; updateLightbox(current); };
+lbRight.onclick = () => { current = (current + 1) % images.length; updateLightbox(current); };
+document.querySelector(".lb-overlay").addEventListener("click", closeLightbox);
+
+// Swipe support for mobile
+let startX = 0;
+lbImg.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+lbImg.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if (endX - startX > 50) lbLeft.click();
+    else if (startX - endX > 50) lbRight.click();
 });

@@ -4,14 +4,14 @@
         "name": "Ivory Ball Gown",
         "price": 2400,
         "desc": "An elegant ivory ball gown featuring delicate lace details and a flowing skirt, perfect for a luxurious bridal look.",
-        "images": [
-            "../images/dresses/dress1.png",
-            "../images/dresses/dress1_back.png"
-        ],
         "category": "dresses",
         "colors": [
             "Ivory",
             "White"
+        ],
+        "images": [
+            "../images/dresses/dress1.png",
+            "../images/dresses/dress1_back.png"
         ]
     },
     {
@@ -19,14 +19,14 @@
         "name": "Blush Mermaid Dress",
         "price": 2100,
         "desc": "A stunning blush mermaid dress with elegant lace accents and a figure-flattering                silhouette, perfect for a romantic bridal look.",
-        "images": [
-            "../images/dresses/dress2.png",
-            "../images/dresses/dress2_back.png"
-        ],
         "category": "dresses",
         "colors": [
             "Blush",
             "Champagne"
+        ],
+        "images": [
+            "../images/dresses/dress2.png",
+            "../images/dresses/dress2_back.png"
         ]
     },
     {
@@ -34,12 +34,12 @@
         "name": "Pearl Hair Comb",
         "price": 120,
         "desc": "Handcrafted pearl hair comb, elegant and timeless.",
-        "images": [
-            "../images/accessories/accessory1.png"
-        ],
         "category": "accessories",
         "colors": [
             "White"
+        ],
+        "images": [
+            "../images/accessories/accessory1.png"
         ]
     },
     {
@@ -47,12 +47,12 @@
         "name": "Luxury Bridal Suitcase",
         "price": 350,
         "desc": "Premium quality suitcase for storing your bridal gown safely.",
-        "images": [
-            "../images/suitcases/suitcase1.png"
-        ],
         "category": "suitcases",
         "colors": [
             "Ivory"
+        ],
+        "images": [
+            "../images/suitcases/suitcase1.png"
         ]
     }
 ]
