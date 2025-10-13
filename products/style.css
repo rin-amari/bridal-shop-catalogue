@@ -1,0 +1,115 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    background: #f9f7f6;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-family: 'Didot', serif;
+    color: #b38b6d;
+}
+
+/* Hero section */
+.immersive-hero {
+    position: relative;
+    text-align: center;
+    background: #faf7f5;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.immersive-hero img {
+    width: auto;
+    height: 80vh;
+    max-width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Thumbnails belt */
+.thumbs-belt {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: -4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.thumbs-belt img {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumbs-belt img.active {
+    border-color: #b38b6d;
+}
+
+.thumbs-belt img:hover {
+    transform: scale(1.05);
+}
+
+/* Product info */
+.product-info {
+    text-align: center;
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.product-info h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    color: #b38b6d;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.desc {
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.product-info p {
+    margin: 0.5rem 0;
+}
+
+.fav-btn {
+    background: none;
+    border: 1px solid #b38b6d;
+    color: #b38b6d;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fav-btn:hover {
+    background: #b38b6d;
+    color: #fff;
+}
