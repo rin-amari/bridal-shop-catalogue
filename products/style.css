@@ -33,18 +33,20 @@ header {
 .thumbs-belt {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    margin-top: -4rem;
+    gap: 12px;
+    margin-top: -36px;
     z-index: 2;
 }
 
 .thumbs-belt img {
-    width: 100px;
-    height: 130px;
+    flex: 0 0 auto;
+    width: 88px;
+    height: 66px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .thumbs-belt img:hover {
@@ -52,7 +54,8 @@ header {
 }
 
 .thumbs-belt img.active {
-    border: 2px solid #b38b6d;
+    border-color: #b38b6d;
+    transform: translateY(-4px);
 }
 
 .product-info {
