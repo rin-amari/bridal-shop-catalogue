@@ -10,9 +10,9 @@
             "White"
         ],
         "images": [
-            "../images/dresses/dress1.png",
-            "../images/dresses/dress1_back.png",
-            "../images/dresses/dress1_detail.png"
+            "../images/dresses/dress1.jpg",
+            "../images/dresses/dress1_back.jpg",
+            "../images/dresses/dress1_detail.jpg"
         ]
     },
     {
@@ -26,10 +26,10 @@
             "Champagne"
         ],
         "images": [
-            "../images/dresses/dress2.png",
-            "../images/dresses/dress2_back.png",
-            "../images/dresses/dress2_detail.png",
-            "../images/dresses/dress2_detail2.png"
+            "../images/dresses/dress2.jpg",
+            "../images/dresses/dress2_back.jpg",
+            "../images/dresses/dress2_detail.jpg",
+            "../images/dresses/dress2_detail2.jpg"
         ]
     },
     {
@@ -43,9 +43,9 @@
             "Champagne"
         ],
         "images": [
-            "../images/dresses/dress3.png",
-            "../images/dresses/dress3_back.png",
-            "../images/dresses/dress3_detail.png"
+            "../images/dresses/dress3.jpg",
+            "../images/dresses/dress3_back.jpg",
+            "../images/dresses/dress3_detail.jpg"
         ]
     },
     {
@@ -58,7 +58,7 @@
             "White"
         ],
         "images": [
-            "../images/accessories/accessory1.png"
+            "../images/accessories/accessory1.jpg"
         ]
     },
     {
@@ -71,7 +71,7 @@
             "Ivory"
         ],
         "images": [
-            "../images/suitcases/suitcase1.png"
+            "../images/suitcases/suitcase1.jpg"
         ]
     }
 ]
